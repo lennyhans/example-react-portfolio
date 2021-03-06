@@ -8,7 +8,7 @@ const SkillBar = (props) =>{
     }
     return (
     <div>
-        <p className="w3-wide"><i class={`fa ${skill.icon}`}></i>
+        <p className="w3-wide"><i className={`fa ${skill.icon}`}></i>
             {skill.name}
         </p>
         <div className="w3-light-grey">
