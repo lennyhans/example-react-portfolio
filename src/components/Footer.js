@@ -22,9 +22,17 @@ function Footer(){
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w3-hover-text-green">
-                w3.css
+                 w3.css
+            </a> {"&"} 
+            <a href="https://reactjs.org/"
+            title="ReactJS" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w3-hover-text-green">
+                Reactjs
             </a>
         </p>
+        <p>Arranged by LennyHans</p>
         </footer>
     );
 }
