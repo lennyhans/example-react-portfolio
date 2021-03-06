@@ -1,5 +1,5 @@
 # React Test Exercise
-This is a exercise to learn how to use Reactjs from the basic 
+This is an exercise to learn how to use Reactjs from the basic 
 [howto](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app), 
 using a template website from [W3Schools](https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm#contact)
 
