@@ -10,6 +10,8 @@ import HighlightContainer from './components/HighlightContainer';
 import ArticleContainer from './components/ArticleContainer';
 import ArticleAbout from './components/ArticleAbout';
 import SkillBar from './components/SkillBar';
+import PortfolioContainer from './components/PortfolioContainer';
+import PortfolioItem from './components/PortfolioItem';
 
 function App() {
   // PREPARE Highligh items DB maybe
@@ -75,6 +77,41 @@ function App() {
       percentage : 75
     }];
   
+  const portfolioItemsData = [
+    {
+      src : "https://www.w3schools.com//w3images/p1.jpg",
+      caption : "The mist over the mountains",
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p2.jpg",
+      caption : "Coffee beans"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p3.jpg",
+      caption : "Bear closeup"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p4.jpg",
+      caption : "Quiet ocean"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p5.jpg",
+      caption : "The mist"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p6.jpg",
+      caption : "My beloved typewriter"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p7.jpg",
+      caption : "Empty ghost train"
+    },
+    {
+      src : "https://www.w3schools.com//w3images/p8.jpg",
+      caption : "Sailing"
+    }
+  ];
+  
   const highlightRendered = highlightItems.map( (el, i) =>{
     return (<HighlightItem 
       name={el.name} 
@@ -91,6 +128,10 @@ function App() {
     );
   });
 
+  const portfolioItemsRendered = portfolioItemsData.map( (el, i) => {
+    return <PortfolioItem {...el} key={i}></PortfolioItem>
+  });
+
   /** */
 
   return (
@@ -101,18 +142,20 @@ function App() {
         title="ABOUT ME" 
         summary="I love photography" 
         id="about">
-          <div className="w3-row">
-            <ArticleAbout {...aboutMeData}></ArticleAbout>
-          </div>
-          <p className="w3-large w3-center w3-padding-16">Im really good at:</p>
-          {skillsRendered}
-        </ArticleContainer>
+        <div className="w3-row">
+          <ArticleAbout {...aboutMeData}></ArticleAbout>
+        </div>
+        <p className="w3-large w3-center w3-padding-16">Im really good at:</p>
+        {skillsRendered}
+      </ArticleContainer>
       <HighlightContainer>{highlightRendered}</HighlightContainer>
       <ParallaxImage text="PORTFOLIO" image="bgimg-2" id="portfolio"></ParallaxImage>
       <ArticleContainer 
         title="MY WORK" 
         summary="Here are some of my latest lorem work ipsum tipsum. Click on the images to make them bigger" 
-        id="about"></ArticleContainer>
+        id="about">
+          <PortfolioContainer items={portfolioItemsRendered}></PortfolioContainer>
+      </ArticleContainer>
       <ParallaxImage text="CONTACT" image="bgimg-3"></ParallaxImage>
       <ContactForm></ContactForm>
       <Footer></Footer>
